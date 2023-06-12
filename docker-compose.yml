@@ -1,18 +1,18 @@
-version: '3.9'
+version: '3.8'
 
 services:
   frontend:
     image: frontend
     restart: always
     ports:
-      - 80:5173
+      - 8000:5173
     environment:
       - DB_HOST=db
-      - DB_USER=hest
-      - DB_PASS=hest
+      - DB_USER=root
+      - DB_PASS=root
       - DB_NAME=zay_dev
     networks:
-      - network
+      - examen-network
 
   backend:
     image: backend
@@ -26,21 +26,21 @@ services:
       - DB_DATABASE=zay_dev
     command: sh -c "npm run db:migrate && npm run db:seed && npm start"
     networks:
-      - network
+      - examen-network
 
   db:
-    image: mariadb:latest
+    image: mariadb:lts
     restart: always
     environment:
       - MARIADB_ROOT_PASSWORD=root
       - MARIADB_DATABASE=zay_dev
     volumes:
-      - db_data:/var/lib/mysql
+      - data:/var/lib/mysql
     networks:
-      - network
+      - examen-network
 
 networks:
-  network:
+  examen-network:
 
 volumes:
-  db_data:
+  data:
