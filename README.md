@@ -1,6 +1,6 @@
 # Zay eCommerce
 
-This is a demo project for Containerization & Linux elective at [UCL University College](https://ucl.dk)
+This is a my assignment for the demo project for Containerization & Linux elective at [UCL University College](https://ucl.dk)
 
 The frontend is based on the following template:
 
