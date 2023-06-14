@@ -26,7 +26,7 @@ In order to containerize the frontend you need to navigate to the frontend folde
 ```
 cd frontend 
 ```
-Here you can build the image for the front using the command: 
+Here you can build the image for the frontend using the command: 
 
 ```
 docker build -t frontend . 
