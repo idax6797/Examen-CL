@@ -2,9 +2,10 @@
 
 This is my examen project in the Containerization & Linux elective at [UCL University College](https://ucl.dk)
 
-The frontend is based on the following template:
+The project is based on the following templates:
 
 * https://github.com/mosaadaldeen/zay-shop
+* https://github.com/ucldk/cl23e-exam-project
 
 ### Frontend
 
@@ -20,7 +21,7 @@ There is a specific README.md file in the backend project
 1. Open docker desktop on you computer
 2. Open the project via the terminal
 
-### Containerize frontend
+### Containerize the frontend
 In order to containerize the frontend you need to navigate to the frontend folder:
 ```
 cd frontend 
@@ -39,7 +40,7 @@ docker run -d -p 8000:5173 frontend
 This will display the frontend on you localhost. Url: http://localhost:8000/
 
 
-### Containerize backend
+### Containerize the backend
 In order to containerize the backend you need to navigate to the backend folder
 
 ```
@@ -59,8 +60,8 @@ docker run -d -p 3000:3000 backend
 
 This will display the backend on you localhost. Url: http://localhost:3000/
 
-### Creating and running a container environment
-I order to run the different services specified in the Docker Compose file you need to navigate to the root of the project where the compose file is located.
+### Creating and running the container environment
+I order to run the different services specified in the Docker Compose file you need to navigate to the root of the project, where the compose file is located.
 > **_NOTE:_**  Only use the following command if you are inside the backend or the frontend folder.
 ```
 cd .. 
@@ -79,11 +80,11 @@ docker swarm init
 ```
 
 After the initialization you can deploy the stack via the command: 
+> **_NOTE:_**  The name *test* can be changed as desired. It is just the name of the stack.
 
 ```
 docker stack deploy -c test-stack.yml test
 ```
-> **_NOTE:_**  The name *test* can be changed as desired. It is just the name of the stack.
 
 The stack is now created and it can be seen via the command: 
 
